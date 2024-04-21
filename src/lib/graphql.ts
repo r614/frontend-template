@@ -1,0 +1,14 @@
+import { initGraphQLTada } from "gql.tada";
+import type { introspection } from "../codegen/graphql.ts";
+
+export const graphql = initGraphQLTada<{
+  introspection: typeof introspection;
+  scalars: {
+    DateTime: string;
+    JSON: string;
+    BigInt: string;
+  };
+}>();
+
+export type { FragmentOf, ResultOf, VariablesOf } from "gql.tada";
+export { readFragment } from "gql.tada";
